@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /usuario/
+Disallow: /login
+Disallow: /register
+Disallow: /verify-email/
+Disallow: /2fa/
+Disallow: /pedido
+Disallow: /success
+Disallow: /pending
+Disallow: /failure
+
+Sitemap: https://example.com/sitemap.xml

@@ -1,0 +1,34 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # FORÇA HTTPS (ESSA É A PARTE PRINCIPAL)
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://bolferofficial.com%{REQUEST_URI} [L,R=301]
+
+  # REMOVE WWW (opcional, mas recomendado)
+  RewriteCond %{HTTP_HOST} ^www\.bolferofficial\.com$ [NC]
+  RewriteRule ^ https://bolferofficial.com%{REQUEST_URI} [L,R=301]
+
+  # BLOQUEIOS
+  RewriteRule ^(?:app|storage|deploy|sql|build)(?:/|$) - [F,L,NC]
+  RewriteRule ^(?:\.env|\.git|\.gitignore|\.editorconfig)$ - [F,L,NC]
+
+  # ROTAS PARA PUBLIC_HTML
+  RewriteRule ^assets/(.*)$ public_html/assets/$1 [L]
+  RewriteRule ^admin/(.*)$ public_html/admin/$1 [L]
+  RewriteRule ^desktop-updates$ public_html/desktop-updates/ [L]
+  RewriteRule ^desktop-updates/(.*)$ public_html/desktop-updates/$1 [L]
+
+  # ROTEAMENTO
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [L,QSA]
+</IfModule>
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>

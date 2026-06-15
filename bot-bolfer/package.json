@@ -1,0 +1,23 @@
+{
+  "name": "bot-bolfer",
+  "version": "1.0.0",
+  "description": "Bot Discord focado em embeds visuais e organizacao de canais.",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "check": "node --check index.js && node --check src/index.js && node --check src/config/index.js && node --check src/commands/index.js && node --check src/commands/setup.js && node --check src/commands/republicar.js && node --check src/commands/anuncio.js && node --check src/commands/coins.js && node --check src/commands/encerrar-enquete.js && node --check src/commands/evento.js && node --check src/commands/enquete.js && node --check src/commands/embed.js && node --check src/embeds/panels.js && node --check src/events/ready.js && node --check src/events/interactionCreate.js && node --check src/services/panelManager.js && node --check src/services/pollService.js && node --check src/storage/messageStore.js && node --check src/storage/pollStore.js && node --check src/utils/discord.js && node --check src/utils/embedFactory.js && node --check src/utils/memberRoles.js && node --check src/utils/runtimePaths.js && node --check src/utils/textFormatter.js && node --check src/generated/bundledEnv.js && node --check scripts/buildExe.js",
+    "build:exe": "node scripts/buildExe.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.3.1"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}

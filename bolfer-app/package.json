@@ -1,0 +1,64 @@
+{
+  "name": "bolfer-app",
+  "productName": "Bolfer Desktop",
+  "version": "0.1.2",
+  "description": "Aplicativo desktop da equipe Bolfer com painel administrativo e Rich Presence no Discord.",
+  "author": "Bolfer",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev:web": "vite",
+    "dev:electron": "wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://127.0.0.1:5173 electron .",
+    "dev": "concurrently -k \"npm:dev:web\" \"npm:dev:electron\"",
+    "build": "vite build",
+    "start": "electron .",
+    "dist:dir": "npm run build && electron-builder --dir",
+    "dist:win": "npm run build && electron-builder --win portable nsis",
+    "publish:updates:local": "powershell -ExecutionPolicy Bypass -File .\\scripts\\sync-desktop-updates.ps1"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1",
+    "electron-updater": "^6.8.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.0.0",
+    "electron-builder": "^26.8.1",
+    "vite": "^6.2.0",
+    "wait-on": "^8.0.1"
+  },
+  "build": {
+    "appId": "com.bolfer.desktop",
+    "productName": "Bolfer Desktop",
+    "icon": "img/logo.ico",
+    "publish": [
+      {
+        "provider": "generic",
+        "url": "https://example.com/desktop-updates"
+      }
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "asar": true,
+    "win": {
+      "icon": "img/logo.ico",
+      "signAndEditExecutable": false,
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
