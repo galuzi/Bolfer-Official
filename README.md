@@ -369,7 +369,7 @@ Construa pensando em quem administra, mas sem esquecer quem usa.
 Idealização do projeto • Arquitetura • Design do sistema • Identidade visual • Paleta de cores • Experiência do usuário
 
 ## Desenvolvimento
-**João**  
+[**João**](https://github.com/joaoweslen)
 Desenvolvimento • Suporte
 
 **Bruno**  
