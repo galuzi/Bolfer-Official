@@ -366,7 +366,7 @@ Construa pensando em quem administra, mas sem esquecer quem usa.
 
 ## Liderança e Produto
 **Carlos**  
-Idealização do projeto • Arquitetura • Design do sistema • Identidade visual • Paleta de cores • Experiência do usuário
+Idealização do projeto • Arquitetura • Design do sistema
 
 ## Desenvolvimento
 [**João**](https://github.com/joaoweslen)
