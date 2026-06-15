@@ -372,7 +372,7 @@ Idealização do projeto • Arquitetura • Design do sistema
 [**João**](https://github.com/joaoweslen)
 Desenvolvimento • Suporte
 
-**Bruno**  
+[**Bruno**](https://github.com/Brunowqe)
 Desenvolvimento Jr
 
 ## Operação e Crescimento
