@@ -358,6 +358,9 @@ Bolfer Official busca equilibrar presença visual forte com ferramentas reais de
 
 Construa pensando em quem administra, mas sem esquecer quem usa.
 
+![Tela inicial Site](assets/home.webp)
+![Pre](assets/site.webp)
+![Bolfer App](assets/image.webp)
 
 # Equipe
 
